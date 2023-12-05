@@ -2,14 +2,17 @@
 pragma solidity ^0.8.18;
 
 import "./EtherStore.sol";
+// import "./EtherStore-safe.sol";
 import "hardhat/console.sol";
 
 
 contract Attack {
     EtherStore public etherStore;
+//  EtherStore_safe public etherStore;
     uint public i = 0;
     constructor(address _etherStoreAddress) {
         etherStore = EtherStore(_etherStoreAddress);
+        // etherStore = EtherStore_safe(_etherStoreAddress);
     }
 
     // Fallback is called when EtherStore sends Ether to this contract.
